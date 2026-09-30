@@ -156,8 +156,8 @@ while state != confirm_state and i < 5:
 
 #zip_code country
 
-zip_code = input('Enter your Zip Code').strip()
-confirm_zip_code = input('Confirm your Zip Code').strip()
+zip_code = input('Enter your Zip Code:').strip()
+confirm_zip_code = input('Confirm your Zip Code:').strip()
 
 i = 0 
 while zip_code != confirm_zip_code and i < 5:
@@ -200,3 +200,229 @@ file.write(contents)
 file.close()
 
 #enter employees
+#employee name confirmation
+emp_name = input('Enter employee name:').strip().capitalize()
+confirm_emp_name = input('Confirm employee name:').strip().capitalize()
+
+while emp_name != confirm_emp_name:
+    print('Names do not match.')
+    emp_name = input('Enter employee name:').strip().capitalize()
+    confirm_emp_name = input('Confirm employee name:').strip().capitalize()
+    if emp_name == confirm_emp_name:
+        print('Employee name confirmed.')
+    elif emp_name != confirm_emp_name:
+         print('Names do not match. Please try again.')
+    else:
+        print('Employee name confirmed.')
+#employee email, phone number, address, city, state, zip code, and employee number confirmation
+emp_email = input('Enter employee email:').strip().lower()
+confirm_emp_email = input('Confirm employee email:').strip().lower()
+while emp_email != confirm_emp_email:
+    print('Emails do not match.')
+    emp_email = input('Enter employee email:').strip().lower()
+    confirm_emp_email = input('Confirm employee email:').strip().lower()
+    if emp_email == confirm_emp_email:
+        print('Employee email confirmed.')
+    elif emp_email != confirm_emp_email:
+         print('Emails do not match. Please try again.')
+    else:
+        print('Employee email confirmed.')
+#employee phone number
+
+emp_phone = input('Enter employee phone number:').strip()
+confirm_emp_phone = input('Confirm employee phone number:').strip()
+while emp_phone != confirm_emp_phone:
+    print('Phone numbers do not match.')
+    emp_phone = input('Enter employee phone number:').strip()
+    confirm_emp_phone = input('Confirm employee phone number:').strip()
+    if emp_phone == confirm_emp_phone:
+        print('Employee phone number confirmed.')
+    elif emp_phone != confirm_emp_phone:
+         print('Phone numbers do not match. Please try again.')
+    else:
+        print('Employee phone number confirmed.')
+# emplooyee address
+emp_address = input('Enter employee address:').strip()
+confirm_emp_address = input('Confirm employee address:').strip()
+while emp_address != confirm_emp_address:
+    print('Addresses do not match.')
+    emp_address = input('Enter employee address:').strip()
+    confirm_emp_address = input('Confirm employee address:').strip()
+    if emp_address == confirm_emp_address:
+        print('Employee address confirmed.')
+    elif emp_address != confirm_emp_address:
+         print('Addresses do not match. Please try again.')
+    else:
+        print('Employee address confirmed.')
+#employee city, 
+
+emp_city = input('Enter employee city:').strip().capitalize()
+confirm_emp_city = input('Confirm employee city:').strip().capitalize()
+while emp_city != confirm_emp_city:
+    print('Cities do not match.')
+    emp_city = input('Enter employee city:').strip().capitalize()
+    confirm_emp_city = input('Confirm employee city:').strip().capitalize()
+    if emp_city == confirm_emp_city:
+        print('Employee city confirmed.')
+    elif emp_city != confirm_emp_city:
+         print('Cities do not match. Please try again.')
+    else:
+        print('Employee city confirmed.')
+#employee state
+emp_state = input('Enter employee state:').strip().capitalize()
+confirm_emp_state = input('Confirm employee state:').strip().capitalize()
+while emp_state != confirm_emp_state:
+    print('States do not match.')
+    emp_state = input('Enter employee state:').strip().capitalize()
+    confirm_emp_state = input('Confirm employee state:').strip().capitalize()
+    if emp_state == confirm_emp_state:
+        print('Employee state confirmed.')
+    elif emp_state != confirm_emp_state:
+         print('States do not match. Please try again.')
+    else:
+        print('Employee state confirmed.')
+#employee zip code 
+emp_zip_code = input('Enter employee zip code:').strip()
+confirm_emp_zip_code = input('Confirm employee zip code:').strip()
+while emp_zip_code != confirm_emp_zip_code:
+    print('Zip codes do not match.')
+    emp_zip_code = input('Enter employee zip code:').strip()
+    confirm_emp_zip_code = input('Confirm employee zip code:').strip()
+    if emp_zip_code == confirm_emp_zip_code:
+        print('Employee zip code confirmed.')
+    elif emp_zip_code != confirm_emp_zip_code:
+         print('Zip codes do not match. Please try again.')
+    else:
+        print('Employee zip code confirmed.')
+#employee country
+emp_country = input('Enter employee country:').strip().capitalize()
+confirm_emp_country = input('Confirm employee country:').strip().capitalize()
+while emp_country != confirm_emp_country:
+    print('Countries do not match.')
+    emp_country = input('Enter employee country:').strip().capitalize()
+    confirm_emp_country = input('Confirm employee country:').strip().capitalize()
+    if emp_country == confirm_emp_country:
+        print('Employee country confirmed.')
+    elif emp_country != confirm_emp_country:
+         print('Countries do not match. Please try again.')
+    else:
+        print('Employee country confirmed.')
+#employee social security number
+emp_social_security_number = input('Enter employee social security number:').strip()
+confirm_emp_social_security_number = input('Confirm employee social security number:').strip()
+while emp_social_security_number != confirm_emp_social_security_number:
+    print('Social security numbers do not match.')
+    emp_social_security_number = input('Enter employee social security number:').strip()
+    confirm_emp_social_security_number = input('Confirm employee social security number:').strip()
+    if emp_social_security_number == confirm_emp_social_security_number:
+        print('Employee social security number confirmed.')
+    elif emp_social_security_number != confirm_emp_social_security_number:
+         print('Social security numbers do not match. Please try again.')
+    else:
+        print('Employee social security number confirmed.')
+#employee employee number
+emp_employee_number = input('Enter employee number:').strip()
+confirm_emp_employee_number = input('Confirm employee number:').strip()
+while emp_employee_number != confirm_emp_employee_number:
+    print('Employee numbers do not match.')
+    emp_employee_number = input('Enter employee number:').strip()
+    confirm_emp_employee_number = input('Confirm employee number:').strip()
+    if emp_employee_number == confirm_emp_employee_number:
+        print('Employee number confirmed.')
+    elif emp_employee_number != confirm_emp_employee_number:
+         print('Employee numbers do not match. Please try again.')
+    else:
+        print('Employee number confirmed.')
+#employee information export to text file
+        
+file = open('employee_info.txt', 'w')
+contents = (f'Employee Name: {emp_name}\n'
+            f'Employee Zip Code: {emp_zip_code}\n'
+            f'Employee Country: {emp_country}\n'
+            f'Employee Social Security Number: {emp_social_security_number}\n'
+            f'Employee Number: {emp_employee_number}\n')
+file.write(contents)
+file.close()
+#employee lookup
+employee_lookup = input('Would you like to view the employee information? (yes/no): ').strip().lower()
+if employee_lookup == 'yes':
+    file = open('employee_info.txt', 'r')
+    saved_employee = file.read()
+    file.close()
+    print('\nSaved Employee Information:')
+    print(saved_employee)
+#employee hours worked confirmation
+scheadule_employee = input('Would you like to schedule an employee? (yes/no): ').strip().lower()
+if scheadule_employee == 'yes':
+    emp_name = input('Enter employee name:').strip().capitalize()
+    emp_sched_hours = input('Enter employee scheduled hours:').strip()
+    employee_number = input('Enter employee number:').strip()
+    confirm_emp_sched_hours = input('Confirm employee scheduled hours:').strip()
+#employee clockin 
+emp_clockin = input('Enter employee clock-in time:').strip()
+emp_confirm_clockin = input('Confirm employee clock-in time:').strip()
+while emp_clockin != emp_confirm_clockin:
+    print('Clock-in times do not match.')
+    emp_clockin = input('Enter employee clock-in time:').strip()
+    emp_confirm_clockin = input('Confirm employee clock-in time:').strip()
+    if emp_clockin == emp_confirm_clockin:
+        print('Employee clock-in time confirmed.')
+    elif emp_clockin != emp_confirm_clockin:
+         print('Clock-in times do not match. Please try again.')
+    else:
+        print('Employee clock-in time confirmed.')
+#employee clockout
+emp_clockout = input('Enter employee clock-out time:').strip()
+emp_confirm_clockout = input('Confirm employee clock-out time:').strip()
+while emp_clockout != emp_confirm_clockout:
+    print('Clock-out times do not match.')
+    emp_clockout = input('Enter employee clock-out time:').strip()
+    emp_confirm_clockout = input('Confirm employee clock-out time:').strip()
+    if emp_clockout == emp_confirm_clockout:
+        print('Employee clock-out time confirmed.')
+    elif emp_clockout != emp_confirm_clockout:
+         print('Clock-out times do not match. Please try again.')
+    else:
+        print('Employee clock-out time confirmed.')
+file = open('employee_schedule.txt', 'w')
+contents = (f'Employee Name: {emp_name}\n'
+            f'Employee Scheduled Hours: {emp_sched_hours}\n'
+            f'Employee Number: {employee_number}\n'
+            f'Employee Clock-in Time: {emp_clockin}\n'
+            f'Employee Clock-out Time: {emp_clockout}\n')
+file.write(contents)
+file.close()
+#total hours worked
+emp_hours_worked = input('Enter employee hours worked:').strip()
+emp_sched_hours = input('Enter employee scheduled hours:').strip()
+emp_confirm_hours_worked = input('Confirm employee hours worked:').strip()
+while emp_hours_worked != emp_confirm_hours_worked:
+    print('Hours worked do not match.')
+    emp_hours_worked = input('Enter employee hours worked:').strip()
+    emp_confirm_hours_worked = input('Confirm employee hours worked:').strip()
+    if emp_hours_worked == emp_confirm_hours_worked:
+        print('Employee hours worked confirmed.')
+    elif emp_hours_worked != emp_confirm_hours_worked:
+         print('Hours worked do not match. Please try again.')
+    else:
+        print('Employee hours worked confirmed.')
+#employee scheduled hours confirmation
+emp_sched_hours = input('Enter employee scheduled hours:').strip()
+emp_confirm_sched_hours = input('Confirm employee scheduled hours:').strip()
+while emp_sched_hours != emp_confirm_sched_hours:
+    print('Scheduled hours do not match.')
+    emp_sched_hours = input('Enter employee scheduled hours:').strip()
+    emp_confirm_sched_hours = input('Confirm employee scheduled hours:').strip()
+    if emp_sched_hours == emp_confirm_sched_hours:
+        print('Employee scheduled hours confirmed.')
+    elif emp_sched_hours != emp_confirm_sched_hours:
+         print('Scheduled hours do not match. Please try again.')
+    else:
+        print('Employee scheduled hours confirmed.')
+file = open('employee_hours.txt', 'w')
+contents = (f'Employee Name: {emp_name}\n'
+            f'Employee Hours Worked: {emp_hours_worked}\n'
+            f'Employee Scheduled Hours: {emp_sched_hours}\n')
+file.write(contents)
+file.close()
+
