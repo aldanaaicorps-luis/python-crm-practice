@@ -37,3 +37,12 @@ else:
     }
 
     print(customers)
+
+     # YOUR NEXT TASK:
+    # Access the last_name value through
+    print(customers['last_name'])
+                    
+    customers.update ({'last_name': 'Johnson'})
+    # the dictionary and print it.
+
+print(customers)
