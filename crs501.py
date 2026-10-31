@@ -1,66 +1,146 @@
-#EMAIL CONFIRMATION
+# EMAIL CONFIRMATION FOR CRM
 
-email = input('Enter your email:')
-confirm_email = input('Confirm your email:')
-
-email = email.strip().lower()
-confirm_email = confirm_email.strip().lower()
-i = 0 
-while email != confirm_email and i < 5:
-    print('Emails do not match.')
-    email = input('Enter your email:')
-    confirm_email = input('Confirm your email:')
-    email = email.strip().lower()
-    confirm_email = confirm_email.strip().lower()
-    i += 1
-
-if email == confirm_email:
-    print('Email confirmed.')
-    
-elif i == 5:
-        print('Too many attempts. Please try again later.')
+# clean_email()        -> only cleans
+# emails_match()       -> only checks if two emails match
+# validate_email()     -> only checks if email format is acceptable
+# get_confirmed_email() -> controls retry attempts
 
 
+def clean_email(email):
+    return email.strip().lower()
 
-i += 1
+
+def emails_match(email, confirm_email):
+    email = clean_email(email)
+    confirm_email = clean_email(confirm_email)
+    return email == confirm_email
+
+
+def validate_email(email):
+    email = clean_email(email)
+
+    if email == "":
+        return "Email cannot be blank."
+    elif " " in email:
+        return "Email cannot contain spaces."
+    elif "@" not in email:
+        return "Email must contain @."
+    elif email.count("@") != 1:
+        return "Email can only contain one @."
+    elif "." not in email:
+        return "Email must contain a domain like .com, .org, or .net."
+    elif not email.endswith(".com") and not email.endswith(".org") and not email.endswith(".net"):
+        return "Email must end with .com, .org, or .net."
+    else:
+        return "valid"
+
+
+def get_confirmed_email():
+    attempts = 0
+
+    while attempts < 5:
+        email = input("Enter your email: ")
+        confirm_email = input("Confirm your email: ")
+
+        email = clean_email(email)
+        confirm_email = clean_email(confirm_email)
+
+        if not emails_match(email, confirm_email):
+            print("Emails do not match.")
+            attempts += 1
+            continue
+
+        validation_result = validate_email(email)
+
+        if validation_result != "valid":
+            print(validation_result)
+            attempts += 1
+            continue
+
+        print("Email confirmed.")
+        return email
+
+    print("Too many attempts. Please try again later.")
+    return None
+
+
+customer_email = get_confirmed_email()
+
+if customer_email is None:
+    exit()
+
+print("Saved customer email:", customer_email)
+
 #NAME CONFIRMATION
-first_name = input('Enter your First Name: ')
-first_name = first_name.strip().capitalize()
-confirm_first_name = input('Confirm your First Name: ')
-confirm_first_name = confirm_first_name.strip().capitalize()
-last_name = input('Enter your Last Name: ')
-last_name = last_name.strip().capitalize()
-confirm_last_name = input('Confirm your Last Name: ')
-confirm_last_name = confirm_last_name.strip().capitalize()
+def clean_name(name):
+    
+    return name.strip() 
 
-i = 0
-while first_name != confirm_first_name and i < 5:
-    print('First names do not match.')
-    first_name = input('Enter your First Name: ')
-    first_name = first_name.strip().capitalize()
-    confirm_first_name = input('Confirm your First Name: ')
-    confirm_first_name = confirm_first_name.strip().capitalize()
-    i += 1
+def names_match(name, confirm_name):
+    
+    return clean_name(name) == clean_name(confirm_name)    
 
-if first_name == confirm_first_name:
-    print('First name confirmed.')
-    i += 1
+def validate_name(name):
+    name = clean_name(name)
+    
+    
+    if name == "":
+        
+        return "Name cannot be blank. Please try again."
 
-while last_name != confirm_last_name and i < 5:
-    print('Last names do not match.')
-    last_name = input('Enter your Last Name: ')
-    last_name = last_name.strip().capitalize()
-    confirm_last_name = input('Confirm your Last Name: ')
-    confirm_last_name = confirm_last_name.strip().capitalize()
-    i += 1
+    else:
+        print ("Names cannot be blank. Please try again.") 
 
-if last_name == confirm_last_name:
-    print('Last name confirmed.')
-    i += 1
+        return name 
+
+def get_confirmed_name(field_name):
+
+    attempts = 0
+
+    while attempts < 5:
+        name = input("Enter your name.")
+        confirm_name = input("Confirm your name.")
+
+        name = clean_name(name)
+        confirm_name = clean_name(confirm_name)
+
+        if not names_match(name, confirm_name):
+                print("Names do not match.")
+                
+                attempts += 1
+                
+                continue 
+        
+        validation_result = validate_name(name)
+
+        if validation_result != "valid":
+            
+            print(validation_result)
+            
+            attempts += 1
+            
+            continue
+
+        print("Name confirmed.")
+        
+        return (name)
+    
+    print("Too many attempts. Please try again.")
+    
+    return None
+            
+
+
+
+
 
 
 
 #phone number confirmation
+def clean_phone_number(number)
+    return number.strip()
+
+
 phone_number = input('Enter your phone number: ')
 phone_number = phone_number.strip()
 confirm_phone_number = input('Confirm your phone number: ')
@@ -426,3 +506,5 @@ contents = (f'Employee Name: {emp_name}\n'
 file.write(contents)
 file.close()
 
+#calculate total hours worked #bid #materials #labor #permit cost #photos #punch list #rework #contract 
+# #job #estimate #job #invoice #job #payment #job
