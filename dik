@@ -1,0 +1,42 @@
+
+
+def what_up(email, confirm_email):
+    #function body
+    names_match = email == confirm_email
+    return names_match
+
+def clean_me_daddy(email):
+    return email.strip().lower()
+
+def the_judge_baby():
+
+    email = input('Enter your email.')
+
+    confirm_email = input('Please confirm your email.')
+    
+    #stores it
+    email = clean_me_daddy(email)
+    confirm_email = clean_me_daddy(confirm_email)
+    
+
+    #call what up
+    names_match = what_up(email, confirm_email)
+    email = False 
+    result = names_match
+    if email == '':
+        return 'email cannot be blank'
+
+    if ' ' in email:
+        return 'email cannot contain spaces'
+
+    else:
+        return names_match
+
+    print('succes')
+
+    return names_match
+
+    print('try again')
+    return None
+
+
