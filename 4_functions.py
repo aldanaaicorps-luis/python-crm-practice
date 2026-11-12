@@ -20,7 +20,6 @@ def val_email(email):
     elif ' ' in email:
         return 'Email cannot have spaces.'
 
-
     else:
 
         return 'valid'
@@ -33,14 +32,15 @@ def controller():
 
     email = input(' Enter your email: ')
     confirm_email = input(' Please confirm email: ')
-     
+    
+    
     email = clean_email(email)
     confirm_email = clean_email(confirm_email)
+    match = email == confirm_email
     
-    result = email 
     result = val_email(email)
-    match = result
-    print(result)
+    
+    print(email)
     print(match)
 
 
